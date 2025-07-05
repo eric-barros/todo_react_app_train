@@ -155,28 +155,26 @@ export default function App() {
 						</Group>
 						{tasks.length > 0 ? (
 							tasks.map((task, index) => {
-								if (task.title) {
-									return (
-										<Card withBorder key={index} mt={'sm'}>
-											<Group position={'apart'}>
-												<Text weight={'bold'}>{task.title}</Text>
-												<ActionIcon
-													onClick={() => {
-														deleteTask(index);
-													}}
-													color={'red'}
-													variant={'transparent'}>
-													<Trash />
-												</ActionIcon>
-											</Group>
-											<Text color={'dimmed'} size={'md'} mt={'sm'}>
-												{task.summary
-													? task.summary
-													: 'No summary was provided for this task'}
-											</Text>
-										</Card>
-									);
-								}
+								return task.title && (
+									<Card withBorder key={index} mt={'sm'}>
+										<Group position={'apart'}>
+											<Text weight={'bold'}>{task.title}</Text>
+											<ActionIcon
+												onClick={() => {
+													deleteTask(index);
+												}}
+												color={'red'}
+												variant={'transparent'}>
+												<Trash />
+											</ActionIcon>
+										</Group>
+										<Text color={'dimmed'} size={'md'} mt={'sm'}>
+											{task.summary
+												? task.summary
+												: 'No summary was provided for this task'}
+										</Text>
+									</Card>
+								);
 							})
 						) : (
 							<Text size={'lg'} mt={'md'} color={'dimmed'}>
