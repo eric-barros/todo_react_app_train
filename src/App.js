@@ -154,7 +154,9 @@ export default function App() {
 							</ActionIcon>
 						</Group>
 						{tasks.length > 0 ? (
-							tasks.map((task, index) => task.title && (
+							tasks
+								.filter(task => task.title)
+								.map((task, index) =>
 									<Card withBorder key={index} mt={'sm'}>
 										<Group position={'apart'}>
 											<Text weight={'bold'}>{task.title}</Text>
@@ -173,7 +175,6 @@ export default function App() {
 												: 'No summary was provided for this task'}
 										</Text>
 									</Card>
-								)
 							)
 						) : (
 							<Text size={'lg'} mt={'md'} color={'dimmed'}>
