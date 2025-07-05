@@ -18,7 +18,7 @@ import {
 	ColorSchemeProvider,
 	//ColorScheme,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+//import { useColorScheme } from '@mantine/hooks';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 export default function App() {
