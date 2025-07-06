@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { useState, useRef, useEffect } from 'react';
 import { MoonStars, Sun, Trash } from 'tabler-icons-react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import {
 	MantineProvider,
@@ -87,7 +87,7 @@ export default function App() {
 	}, []);
 
 	return (
-		<BrowserRouter basename="/todo_react_app_train">
+		<HashRouter>
 			<ColorSchemeProvider
 				colorScheme={colorScheme}
 				toggleColorScheme={toggleColorScheme}>
@@ -195,6 +195,6 @@ export default function App() {
 					</div>
 				</MantineProvider>
 			</ColorSchemeProvider>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
