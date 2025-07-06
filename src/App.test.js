@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import TodoItem from './TodoItem';
 
 test('renders todo item with correct text', () => {
     const task = { title: "Gardening", summary: "With my daughter" };
