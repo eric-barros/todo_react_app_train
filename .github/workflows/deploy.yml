@@ -29,3 +29,8 @@ jobs:
 
       - name: Run tests
         run: npm test -- --watchAll=false
+        
+      - name: Deploy 🚀 #1.4.4
+        uses: JamesIves/github-pages-deploy-action@v4 #1.1.5
+        with:
+          folder: build #1.1.5
