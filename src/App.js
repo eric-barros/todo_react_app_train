@@ -8,7 +8,7 @@ import {
 	Group,
 	Card,
 	ActionIcon,
-	Code,
+	//Code,
 } from '@mantine/core';
 import { useState, useRef, useEffect } from 'react';
 import { MoonStars, Sun, Trash } from 'tabler-icons-react';
@@ -16,16 +16,16 @@ import { MoonStars, Sun, Trash } from 'tabler-icons-react';
 import {
 	MantineProvider,
 	ColorSchemeProvider,
-	ColorScheme,
+	//ColorScheme,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+//import { useColorScheme } from '@mantine/hooks';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 export default function App() {
 	const [tasks, setTasks] = useState([]);
 	const [opened, setOpened] = useState(false);
 
-	const preferredColorScheme = useColorScheme();
+	//const preferredColorScheme = useColorScheme();
 	const [colorScheme, setColorScheme] = useLocalStorage({
 		key: 'mantine-color-scheme',
 		defaultValue: 'light',
@@ -154,30 +154,28 @@ export default function App() {
 							</ActionIcon>
 						</Group>
 						{tasks.length > 0 ? (
-							tasks.map((task, index) => {
-								if (task.title) {
-									return (
-										<Card withBorder key={index} mt={'sm'}>
-											<Group position={'apart'}>
-												<Text weight={'bold'}>{task.title}</Text>
-												<ActionIcon
-													onClick={() => {
-														deleteTask(index);
-													}}
-													color={'red'}
-													variant={'transparent'}>
-													<Trash />
-												</ActionIcon>
-											</Group>
-											<Text color={'dimmed'} size={'md'} mt={'sm'}>
-												{task.summary
-													? task.summary
-													: 'No summary was provided for this task'}
-											</Text>
-										</Card>
-									);
-								}
-							})
+							tasks
+								.filter(task => task.title)
+								.map((task, index) =>
+									<Card withBorder key={index} mt={'sm'}>
+										<Group position={'apart'}>
+											<Text weight={'bold'}>{task.title}</Text>
+											<ActionIcon
+												onClick={() => {
+													deleteTask(index);
+												}}
+												color={'red'}
+												variant={'transparent'}>
+												<Trash />
+											</ActionIcon>
+										</Group>
+										<Text color={'dimmed'} size={'md'} mt={'sm'}>
+											{task.summary
+												? task.summary
+												: 'No summary was provided for this task'}
+										</Text>
+									</Card>
+							)
 						) : (
 							<Text size={'lg'} mt={'md'} color={'dimmed'}>
 								You have no tasks
