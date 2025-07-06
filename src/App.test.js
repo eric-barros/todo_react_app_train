@@ -11,7 +11,7 @@ import { Trash } from 'tabler-icons-react';
 test('renders todo item with correct text', () => {
     const task = { title: "Gardening", summary: "With my daughter" };
     render(
-        <Card withBorder key={index} mt={'sm'}>
+        <Card withBorder mt={'sm'}>
             <Group position={'apart'}>
                 <Text weight={'bold'}>{task.title}</Text>
                 <ActionIcon
