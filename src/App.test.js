@@ -1,4 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import {
+	Text,
+	Group,
+	Card,
+	ActionIcon,
+	//Code,
+} from '@mantine/core';
 
 test('renders todo item with correct text', () => {
     const task = { title: "Gardening", summary: "With my daughter" };
