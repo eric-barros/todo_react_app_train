@@ -6,6 +6,7 @@ import {
 	ActionIcon,
 	//Code,
 } from '@mantine/core';
+import { Trash } from 'tabler-icons-react';
 
 test('renders todo item with correct text', () => {
     const task = { title: "Gardening", summary: "With my daughter" };
