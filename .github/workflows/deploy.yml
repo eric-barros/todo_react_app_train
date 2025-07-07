@@ -29,3 +29,9 @@ jobs:
 
       - name: Run tests
         run: npm test -- --watchAll=false
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAT }} # <-- Use your PAT secret
+          publish_dir: ./build

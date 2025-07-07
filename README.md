@@ -1,4 +1,4 @@
-<h1 align="center">Todo React App  📝</h1>  
+<h1 align="center">Todo React App Eric📝</h1>  
 <p align="center">
   🖊️ A simple Todo App built by Ericusing <a href="https://reactjs.org/">React</a> and <a href="https://mantine.dev/">Mantine UI</a>
 </p>
